@@ -4,6 +4,7 @@
   <p>Understand your APIs. Detect drifts. Ship with confidence.</p>
 
   <p>
+    <a href="https://apiforge-organisation.github.io/docs/"><img src="https://img.shields.io/badge/docs-online-0066FF" alt="Documentation"></a>
     <a href="https://www.npmjs.com/package/apiforgejs"><img src="https://img.shields.io/npm/v/apiforgejs?label=sdk-nodejs&color=0066FF" alt="npm version"></a>
     <a href="https://github.com/APIForge-Organisation/sdk-nodejs/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-MIT-green" alt="License MIT"></a>
     <a href="https://github.com/APIForge-Organisation/sdk-nodejs/actions"><img src="https://img.shields.io/github/actions/workflow/status/APIForge-Organisation/sdk-nodejs/ci.yml?branch=main&label=CI" alt="CI"></a>
@@ -49,6 +50,8 @@ app.use(apiforge({ mode: 'local' }));
 
 That's it. Your API dashboard is live.
 
+**→ [Full documentation](https://apiforge-organisation.github.io/docs/)**
+
 ---
 
 ## What you get out of the box
@@ -70,6 +73,7 @@ That's it. Your API dashboard is live.
 | Repository | Description | Status |
 |---|---|---|
 | [sdk-nodejs](https://github.com/APIForge-Organisation/sdk-nodejs) | Express.js SDK — local-first observability middleware | `MVP` |
+| [docs](https://github.com/APIForge-Organisation/docs) | Documentation — [apiforge-organisation.github.io/docs](https://apiforge-organisation.github.io/docs/) | `Live` |
 | [sdk-python](https://github.com/APIForge-Organisation/sdk-python) | FastAPI / Django SDK | `Planned` |
 | [sdk-nestjs](https://github.com/APIForge-Organisation/sdk-nestjs) | NestJS SDK | `Planned` |
 | [api](https://github.com/APIForge-Organisation/api) | SaaS backend — collector, engine, auth | `Planned` |
