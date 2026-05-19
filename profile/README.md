@@ -6,8 +6,10 @@
   <p>
     <a href="https://apiforge-organisation.github.io/docs/"><img src="https://img.shields.io/badge/docs-online-0066FF" alt="Documentation"></a>
     <a href="https://www.npmjs.com/package/apiforgejs"><img src="https://img.shields.io/npm/v/apiforgejs?label=sdk-nodejs&color=0066FF" alt="npm version"></a>
+    <a href="https://pypi.org/project/apiforgepy/"><img src="https://img.shields.io/pypi/v/apiforgepy?label=sdk-python&color=0066FF" alt="PyPI version"></a>
     <a href="https://github.com/APIForge-Organisation/sdk-nodejs/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-MIT-green" alt="License MIT"></a>
-    <a href="https://github.com/APIForge-Organisation/sdk-nodejs/actions"><img src="https://img.shields.io/github/actions/workflow/status/APIForge-Organisation/sdk-nodejs/ci.yml?branch=main&label=CI" alt="CI"></a>
+    <a href="https://github.com/APIForge-Organisation/sdk-nodejs/actions"><img src="https://img.shields.io/github/actions/workflow/status/APIForge-Organisation/sdk-nodejs/ci.yml?branch=main&label=CI%20Node.js" alt="CI Node.js"></a>
+    <a href="https://github.com/APIForge-Organisation/sdk-python/actions"><img src="https://img.shields.io/github/actions/workflow/status/APIForge-Organisation/sdk-python/ci.yml?branch=main&label=CI%20Python" alt="CI Python"></a>
   </p>
 </div>
 
@@ -35,6 +37,8 @@ Unlike generic monitoring tools, APIForge doesn't just display raw metrics — i
 
 ## Quick start
 
+**Node.js (Express)**
+
 ```bash
 npm install apiforgejs
 ```
@@ -42,10 +46,25 @@ npm install apiforgejs
 ```javascript
 const { apiforge } = require('apiforgejs');
 
-// Drop this anywhere in your Express app
 app.use(apiforge({ mode: 'local' }));
 
 // Dashboard → http://localhost:4242
+```
+
+**Python (FastAPI / Starlette)**
+
+```bash
+pip install apiforgepy
+```
+
+```python
+from fastapi import FastAPI
+from apiforgepy import ApiForgeMiddleware
+
+app = FastAPI()
+app.add_middleware(ApiForgeMiddleware, mode="local")
+
+# Dashboard → http://localhost:4242
 ```
 
 That's it. Your API dashboard is live.
@@ -64,7 +83,8 @@ That's it. Your API dashboard is live.
 | **Automatic insights** | Plain-language alerts — no dashboard configuration needed |
 | **Dead endpoint detection** | Identifies routes with no traffic in the last 21 days |
 | **Release impact tracking** | Before/after comparison on every deploy |
-| **Drift detection** | Catches slow degradations invisible day-to-day |
+| **Drift detection** | OLS regression over 30 days — catches slow degradations invisible day-to-day |
+| **Bandwidth tracking** | Average response size per route (`bytes_avg`) via `Content-Length` |
 
 ---
 
@@ -72,20 +92,20 @@ That's it. Your API dashboard is live.
 
 | Repository | Description | Status |
 |---|---|---|
-| [sdk-nodejs](https://github.com/APIForge-Organisation/sdk-nodejs) | Express.js SDK — local-first observability middleware | `MVP` |
+| [sdk-nodejs](https://github.com/APIForge-Organisation/sdk-nodejs) | Express.js SDK — local-first observability middleware | `Active` |
+| [sdk-python](https://github.com/APIForge-Organisation/sdk-python) | FastAPI / Starlette SDK — local-first observability middleware | `MVP` |
 | [docs](https://github.com/APIForge-Organisation/docs) | Documentation — [apiforge-organisation.github.io/docs](https://apiforge-organisation.github.io/docs/) | `Live` |
-| [sdk-python](https://github.com/APIForge-Organisation/sdk-python) | FastAPI / Django SDK | `Planned` |
 | [sdk-nestjs](https://github.com/APIForge-Organisation/sdk-nestjs) | NestJS SDK | `Planned` |
-| [api](https://github.com/APIForge-Organisation/api) | SaaS backend — collector, engine, auth | `Planned` |
-| [dashboard](https://github.com/APIForge-Organisation/dashboard) | React SaaS dashboard | `Planned` |
+| [api](https://github.com/APIForge-Organisation/api) | SaaS backend — Express.js + Prisma + BullMQ | `In Progress` |
+| [dashboard](https://github.com/APIForge-Organisation/dashboard) | React SaaS dashboard — React 19 + TypeScript + Tailwind | `In Progress` |
 
 ---
 
 ## Roadmap
 
-- [x] **Phase 1 — MVP Local** · Express.js SDK · SQLite · Dashboard on port 4242 · Insights (anomaly, dead endpoints, release impact)
-- [ ] **Phase 2 — Multi-SDK** · FastAPI · NestJS · Universal event protocol
-- [ ] **Phase 3 — SaaS** · Cloud collector · PostgreSQL + TimescaleDB · Pro & Team plans
+- [x] **Phase 1 — MVP Local** · Express.js SDK · SQLite · Dashboard on port 4242 · Insights (anomaly, dead endpoints, drift detection, release impact)
+- [ ] **Phase 2 — Multi-SDK** · FastAPI ✅ · NestJS · Universal event protocol
+- [ ] **Phase 3 — SaaS** · Cloud collector · PostgreSQL + TimescaleDB · Pro & Team plans *(in development)*
 - [ ] **Phase 4 — Advanced Intelligence** · ML anomaly detection · Multi-service correlation · Weekly reports
 
 ---

@@ -8,6 +8,8 @@ Only the latest minor release of each SDK is actively maintained for security pa
 |---|---|
 | sdk-nodejs `latest` | Yes |
 | sdk-nodejs `< latest` | No |
+| sdk-python `latest` | Yes |
+| sdk-python `< latest` | No |
 
 ## Reporting a vulnerability
 

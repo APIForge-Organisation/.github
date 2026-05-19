@@ -42,9 +42,9 @@ git checkout -b feat/your-feature-name
 ### 2. Install dependencies
 
 ```bash
-npm install        # Node.js repos
+npm install              # Node.js repos
 # or
-pip install -e ".[dev]"   # Python repos
+pip install -e ".[dev]"  # Python repos
 ```
 
 ### 3. Make your changes
@@ -84,6 +84,12 @@ Target the `dev` branch. Fill in the PR template completely — especially the t
 **Node.js repositories:**
 - Node.js 22+ required
 - ESLint with the project config — run `npm run lint` before pushing
+- No new dependencies without prior discussion (keep the SDK lightweight)
+
+**Python repositories:**
+- Python 3.11+ required
+- Starlette ≥ 0.27 / FastAPI ≥ 0.110
+- Format with `black` and lint with `ruff` before pushing
 - No new dependencies without prior discussion (keep the SDK lightweight)
 
 **All repositories:**
