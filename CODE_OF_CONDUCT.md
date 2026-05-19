@@ -19,7 +19,7 @@ We are committed to making participation in the APIForge community a respectful 
 
 ## Enforcement
 
-Instances of unacceptable behavior may be reported to **contact@apiforge.dev**. All reports will be reviewed and responded to. Maintainers have the right to remove comments, close issues, or ban contributors who violate this policy.
+Instances of unacceptable behavior may be reported by opening a [private discussion](https://github.com/orgs/APIForge-Organisation/discussions). All reports will be reviewed and responded to. Maintainers have the right to remove comments, close issues, or ban contributors who violate this policy.
 
 ## Attribution
 

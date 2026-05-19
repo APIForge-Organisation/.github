@@ -15,9 +15,7 @@ Only the latest minor release of each SDK is actively maintained for security pa
 
 **Do not report security vulnerabilities through public GitHub issues.**
 
-If you discover a security vulnerability, please send a report to:
-
-**security@apiforge.dev**
+If you discover a security vulnerability, please open a [GitHub Security Advisory](https://github.com/APIForge-Organisation/sdk-nodejs/security/advisories/new) on the affected repository.
 
 Include as much of the following as possible:
 
